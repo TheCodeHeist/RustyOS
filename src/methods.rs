@@ -1,4 +1,5 @@
 use crate::vga_buffer::{Buffer, Color, ColorCode, Writer};
+use core::fmt::Write;
 
 pub fn print_something() {
     let mut writer = Writer {
@@ -8,6 +9,7 @@ pub fn print_something() {
     };
 
     writer.write_byte(b'H');
-    writer.write_string("ello ");
-    writer.write_string("Wörld!");
+    writer.write_string("ello! ");
+
+    write!(writer, "The numbers are {} and {}", 42, 1.0 / 3.0).unwrap();
 }
