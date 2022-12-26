@@ -1,12 +1,10 @@
 #![no_std]
 #![no_main]
 
-mod methods;
+mod console;
 mod vga_buffer;
 
 use core::panic::PanicInfo;
-
-// use methods::print_something;
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
@@ -17,14 +15,16 @@ fn panic(_info: &PanicInfo) -> ! {
 pub extern "C" fn _start() -> ! {
     // print_something();
 
-    use core::fmt::Write;
+    // use core::fmt::Write;
 
-    vga_buffer::WRITER
-        .lock()
-        .write_str("Welcome to RustyOS")
-        .unwrap();
+    // vga_buffer::WRITER
+    //     .lock()
+    //     .write_str("Welcome to RustyOS")
+    //     .unwrap();
 
-    write!(vga_buffer::WRITER.lock(), ", and this is its {}!", "BIOS").unwrap();
+    // write!(vga_buffer::WRITER.lock(), ", and this is its {}!", "BIOS").unwrap();
+
+    println!("Hi {}, welcome to {} BIOS!!", "TheCodeHeist", "RustyOS");
 
     loop {}
 }
