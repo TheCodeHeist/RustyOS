@@ -7,7 +7,9 @@ mod vga_buffer;
 use core::panic::PanicInfo;
 
 #[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
+fn panic(info: &PanicInfo) -> ! {
+    println!("{info}");
+
     loop {}
 }
 
@@ -26,5 +28,7 @@ pub extern "C" fn _start() -> ! {
 
     println!("Hi {}, welcome to {} BIOS!!", "TheCodeHeist", "RustyOS");
 
-    loop {}
+    panic!("You are the reason for my panicking!!!");
+
+    // loop {}
 }
