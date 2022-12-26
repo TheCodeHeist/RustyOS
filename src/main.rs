@@ -1,5 +1,8 @@
 #![no_std]
 #![no_main]
+#![feature(custom_test_frameworks)]
+#![test_runner(crate::test_runner)]
+#![reexport_test_harness_main = "test_main"]
 
 mod console;
 mod vga_buffer;
@@ -13,22 +16,28 @@ fn panic(info: &PanicInfo) -> ! {
     loop {}
 }
 
+#[cfg(test)]
+fn test_runner(tests: &[&dyn Fn()]) {
+    println!("Running {} tests", tests.len());
+
+    for test in tests {
+        test();
+    }
+}
+
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    // print_something();
-
-    // use core::fmt::Write;
-
-    // vga_buffer::WRITER
-    //     .lock()
-    //     .write_str("Welcome to RustyOS")
-    //     .unwrap();
-
-    // write!(vga_buffer::WRITER.lock(), ", and this is its {}!", "BIOS").unwrap();
-
     println!("Hi {}, welcome to {} BIOS!!", "TheCodeHeist", "RustyOS");
 
-    panic!("You are the reason for my panicking!!!");
+    #[cfg(test)]
+    test_main();
 
-    // loop {}
+    loop {}
+}
+
+#[test_case]
+fn trivial_assertion() {
+    print!("trivial assertion... ");
+    assert_eq!(1, 1);
+    println!("[ok]");
 }
