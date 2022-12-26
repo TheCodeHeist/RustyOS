@@ -10,7 +10,7 @@ You guys can follow along with me too!
 
 ## TODOs
 
-- [ ] Making a baremetal Rust Binary
-- [ ] Making a minimal Rust Kernel
+- [x] Making a baremetal Rust Binary
+- [x] Making a minimal Rust Kernel
 - [ ] Adding VGA Text Mode Support
 - [ ] Testing with QEMU
