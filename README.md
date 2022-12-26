@@ -12,5 +12,5 @@ You guys can follow along with me too!
 
 - [x] Making a baremetal Rust Binary
 - [x] Making a minimal Rust Kernel
-- [ ] Adding VGA Text Mode Support
+- [x] Adding VGA Text Mode Support
 - [ ] Testing with QEMU
