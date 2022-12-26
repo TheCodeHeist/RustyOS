@@ -6,7 +6,7 @@ mod vga_buffer;
 
 use core::panic::PanicInfo;
 
-use methods::print_something;
+// use methods::print_something;
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
@@ -15,7 +15,16 @@ fn panic(_info: &PanicInfo) -> ! {
 
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    print_something();
+    // print_something();
+
+    use core::fmt::Write;
+
+    vga_buffer::WRITER
+        .lock()
+        .write_str("Welcome to RustyOS")
+        .unwrap();
+
+    write!(vga_buffer::WRITER.lock(), ", and this is its {}!", "BIOS").unwrap();
 
     loop {}
 }
