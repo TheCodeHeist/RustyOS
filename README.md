@@ -10,10 +10,28 @@ I'm following this article: <https://os.phil-opp.com/>
 
 You guys can follow along with me too!
 
-## TODOs
+## Chapters (from the article)
 
-- [x] **Chapter One**
-  - [x] Making a baremetal Rust Binary
-  - [x] Making a minimal Rust Kernel
-  - [x] Adding VGA Text Mode Support
-  - [x] Testing with QEMU and Integrated Testing
+- [x] **Chapter One: Bare Bones**
+
+  - [x] A Freestanding Rust Binary
+  - [x] A Minimal Rust Kernel
+  - [x] VGA Text Mode
+  - [x] Testing
+
+- [ ] **Chapter Two: Interrupts**
+
+  - [ ] CPU Exceptions
+  - [ ] Double Faults
+  - [ ] Hardware Interrupts
+
+- [ ] **Chapter Three: Memory Management**
+
+  - [ ] Introduction to Paging
+  - [ ] Page Implementation
+  - [ ] Heap Allocation
+  - [ ] Allocator Designs
+
+- [ ] **Chapter Four: Multitasking**
+
+  - [ ] Async/Await
