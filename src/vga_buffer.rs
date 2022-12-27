@@ -38,17 +38,17 @@ impl ColorCode {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[repr(C)]
-struct ScreenChar {
-    ascii_character: u8,
-    color_code: ColorCode,
+pub struct ScreenChar {
+    pub ascii_character: u8,
+    pub color_code: ColorCode,
 }
 
-const BUFFER_HEIGHT: usize = 25;
-const BUFFER_WIDTH: usize = 80;
+pub const BUFFER_HEIGHT: usize = 25;
+pub const BUFFER_WIDTH: usize = 80;
 
 #[repr(transparent)]
 pub struct Buffer {
-    chars: [[Volatile<ScreenChar>; BUFFER_WIDTH]; BUFFER_HEIGHT],
+    pub chars: [[Volatile<ScreenChar>; BUFFER_WIDTH]; BUFFER_HEIGHT],
 }
 
 pub struct Writer {
@@ -60,7 +60,7 @@ pub struct Writer {
 lazy_static! {
     pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
         column_position: 0,
-        color_code: ColorCode::new(Color::Yellow, Color::Black),
+        color_code: ColorCode::new(Color::Pink, Color::Black),
         buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
     });
 }
