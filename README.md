@@ -22,7 +22,7 @@ You guys can follow along with me too!
 - [ ] **Chapter Two: Interrupts**
 
   - [x] CPU Exceptions
-  - [ ] Double Faults
+  - [x] Double Faults
   - [ ] Hardware Interrupts
 
 - [ ] **Chapter Three: Memory Management**
