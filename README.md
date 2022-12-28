@@ -21,7 +21,7 @@ You guys can follow along with me too!
 
 - [ ] **Chapter Two: Interrupts**
 
-  - [ ] CPU Exceptions
+  - [x] CPU Exceptions
   - [ ] Double Faults
   - [ ] Hardware Interrupts
 
