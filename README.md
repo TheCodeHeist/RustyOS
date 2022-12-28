@@ -19,11 +19,11 @@ You guys can follow along with me too!
   - [x] VGA Text Mode
   - [x] Testing
 
-- [ ] **Chapter Two: Interrupts**
+- [x] **Chapter Two: Interrupts**
 
   - [x] CPU Exceptions
   - [x] Double Faults
-  - [ ] Hardware Interrupts
+  - [x] Hardware Interrupts
 
 - [ ] **Chapter Three: Memory Management**
 
