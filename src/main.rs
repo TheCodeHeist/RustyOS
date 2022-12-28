@@ -13,19 +13,12 @@ pub extern "C" fn _start() -> ! {
 
     rusty_os::init();
 
-    // unsafe {
-    //     *(0xdeadbeef as *mut u64) = 42;
-    // }
-
     fn stack_overflow() {
         stack_overflow(); // for each recursion, the return address is pushed
     }
 
     // trigger a stack overflow
     stack_overflow();
-
-    // invoke a breakpoint exception
-    // x86_64::instructions::interrupts::int3();
 
     #[cfg(test)]
     test_main();
