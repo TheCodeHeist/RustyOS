@@ -8,6 +8,7 @@
 use core::panic::PanicInfo;
 
 pub mod console;
+pub mod gdt;
 pub mod interrupts;
 pub mod qemu;
 pub mod serial;
@@ -57,6 +58,7 @@ pub extern "C" fn _start() -> ! {
 }
 
 pub fn init() {
+    gdt::init();
     interrupts::init_idt();
 }
 
